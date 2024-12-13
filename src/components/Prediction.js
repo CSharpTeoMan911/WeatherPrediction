@@ -4,16 +4,17 @@ import temperature from "../files/images/celsius.webp"
 import question from "../files/images/question-mark.webp"
 import { useState } from "react"
 import machine_learning_interface from "../files/main.py"
+import PuffLoader from "react-spinners/PuffLoader";
 
-setInterval(()=>{
+setInterval(() => {
     const mainPanel = document.getElementById("weather_prediction");
     const navBar = document.getElementById("nav-bar");
-    
-    if(mainPanel !== null){
-        if(navBar !== null){
+
+    if (mainPanel !== null) {
+        if (navBar !== null) {
             const validHeight = window.innerHeight - navBar.offsetHeight;
             let tr = (validHeight - mainPanel.offsetHeight) / 2;
-            if(tr < 0)
+            if (tr < 0)
                 tr = 0;
 
             mainPanel.style.transform = "translateY(" + tr + "px)";
@@ -34,15 +35,21 @@ export default function Prediction(props) {
     const [temp, setTemp] = useState(0);
     const [pyodideWorker, setPyodideWorker] = useState(props.worker);
     const [hint, showHint] = useState("toast");
+    const [loaderSize, setLoaderSize] = useState(0);
+    const [loaderVisibility, setLoaderVisibility] = useState("hidden");
 
     pyodideWorker.onmessage = (e) => {
         const message = e.data;
         if (message.indexOf("Predicted temperature:") == 0) {
             setTemp(message.substring("Predicted temperature:".length + 1, message.length));
+            setLoaderSize(0);
+            setLoaderVisibility("hidden");
         }
     }
 
     async function runMachineLearningModel() {
+        setLoaderSize(40);
+        setLoaderVisibility("visible");
         const _date = new Date(date);
         const day = _date.getDate();
         const month = _date.getMonth() + 1;
@@ -60,14 +67,14 @@ export default function Prediction(props) {
                     <strong className="me-auto">Help</strong>
                     <button type="button" className="btn-close" aria-label="Close" onClick={() => { showHint("toast"); }}></button>
                 </div>
-                <div className="toast-body" style={{background:"rgb(255,255,255)"}}>
+                <div className="toast-body" style={{ background: "rgb(255,255,255)" }}>
                     <ul >
                         <li>
                             Select a date to predict the temperature for that specific date.
                         </li>
                         <br />
                         <li>
-                            Select 'Global' to predict the average global temperature for the selected date, or select 'London' to predict the average temperature in London for the selected date.   
+                            Select 'Global' to predict the average global temperature for the selected date, or select 'London' to predict the average temperature in London for the selected date.
                         </li>
                     </ul>
                 </div>
@@ -82,14 +89,14 @@ export default function Prediction(props) {
                 <div>
                     <div className="pred-container">
                         <img style={{ height: "calc(28px + 0.5vw + 0.5vh)", marginRight: "calc(15px + 0.5vw + 0.5vh)", alignSelf: "center" }} src={calendar} />
-                        <input id="datepicker" style={{ alignSelf: "center", fontSize:"calc(9px + 0.5vw + 0.5vh)", marginLeft: "calc(15px + 0.5vw + 0.5vh)", backgroundColor: "rgb(28, 111, 236)", borderRadius: "5px", color: "white", colorScheme: "dark", border: "0px solid transparent", outline: "2px solid black" }} min={c_formatted_date} value={date} type={"date"} onChange={(e) => { setDate(e.target.value) }} />
+                        <input id="datepicker" style={{ alignSelf: "center", fontSize: "calc(10px + 0.5vw + 0.5vh)", marginLeft: "calc(15px + 0.5vw + 0.5vh)", backgroundColor: "rgb(28, 111, 236)", borderRadius: "5px", color: "white", colorScheme: "dark", border: "0px solid transparent", outline: "2px solid black" }} min={c_formatted_date} value={date} type={"date"} onChange={(e) => { setDate(e.target.value) }} />
                     </div>
                 </div>
                 <div>
                     <div className="pred-container">
                         <img style={{ height: "calc(28px + 0.5vw + 0.5vh)", marginRight: "calc(15px + 0.5vw + 0.5vh)", alignSelf: "center" }} src={globe} />
                         <div className="btn-group">
-                            <button type="button" className="btn btn-primary btn-sm dropdown-toggle" style={{border: "2px solid black", fontSize:"calc(7px + 0.5vw + 0.5vh)"}} data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" className="btn btn-primary btn-sm dropdown-toggle" style={{ border: "2px solid black", fontSize: "calc(8px + 0.5vw + 0.5vh)" }} data-bs-toggle="dropdown" aria-expanded="false">
                                 {location}
                             </button>
                             <ul className="dropdown-menu">
@@ -102,11 +109,26 @@ export default function Prediction(props) {
                 <div>
                     <div className="pred-container">
                         <img style={{ height: "calc(28px + 0.5vw + 0.5vh)", marginRight: "calc(14px + 0.5vw + 0.5vh)", alignSelf: "center" }} src={temperature} />
-                        <input className="prediction-output" style={{fontSize:"calc(9px + 0.5vw + 0.5vh)"}} readOnly={"readonly"} value={temp + "\u2103"} />
+                        <PuffLoader
+                            color={"rgb(28, 111, 236)"}
+                            loading={true}
+                            cssOverride={
+                                {
+                                    display: "block",
+                                    margin: "0 auto",
+                                    borderColor: "rgb(28, 111, 236)",
+                                    visibility: loaderVisibility
+                                }
+                            }
+                            aria-label="Loading Spinner"
+                            data-testid="loader"
+                            size={loaderSize}
+                        />
+                        <input className="prediction-output" style={{ fontSize: "calc(9px + 0.5vw + 0.5vh)" }} readOnly={"readonly"} value={temp + "\u2103"} />
                     </div>
                 </div>
 
-                <button className="prediction" style={{fontSize:"calc(8px + 0.5vw + 0.5vh)"}}  onClick={runMachineLearningModel}>
+                <button className="prediction" style={{ fontSize: "calc(9px + 0.5vw + 0.5vh)" }} onClick={runMachineLearningModel}>
                     Predict
                 </button>
             </div>
