@@ -8,13 +8,15 @@
 
 
 div.main-panel{
-    background-color: white;
-    width: fit-content;
-    height: fit-content;
-    min-width: 150px;
-    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: rgba(230, 228, 228, 0.8);
     border-radius: 10px;
     align-self: center;
     justify-self: center;
-    transform: translateY(50%);
+    transform: translateY(100%);
+    height: fit-content;
+    width: fit-content;
+    padding: 30px;
 }

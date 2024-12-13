@@ -1,0 +1,34 @@
+div.pred-container{
+    display: flex;
+    width: fit-content;
+    margin-top: 20px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: start;
+}
+
+input.datesection{
+    width: 30px;
+    margin-right: 10px;
+}
+
+input.prediction-output{
+    background-color: transparent;
+    border: 0px solid transparent;
+    outline: 0px solid transparent;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button.prediction{
+    align-self: center;
+    margin-top: 25px;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid black;
+    background-color: #dc3545;
+    color: white;
+}
+
+.prediction:hover{
+    background-color: #88212b;
+}

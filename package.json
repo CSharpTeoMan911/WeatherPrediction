@@ -4,11 +4,12 @@
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
-    "pyodide": "^0.26.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-py": "^1.11.2",
     "react-router": "^7.0.2",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "react-spinners": "^0.15.0"
   },
   "scripts": {
     "start": "react-scripts start",
