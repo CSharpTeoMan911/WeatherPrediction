@@ -12,7 +12,7 @@ setInterval(()=>{
     if(mainPanel !== null){
         if(navBar !== null){
             const validHeight = window.innerHeight - navBar.offsetHeight;
-            const tr = (validHeight - mainPanel.offsetHeight) / 2;
+            let tr = (validHeight - mainPanel.offsetHeight) / 2;
             if(tr < 0)
                 tr = 0;
 
@@ -60,7 +60,7 @@ export default function Prediction(props) {
                     <strong className="me-auto">Help</strong>
                     <button type="button" className="btn-close" aria-label="Close" onClick={() => { showHint("toast"); }}></button>
                 </div>
-                <div className="toast-body">
+                <div className="toast-body" style={{background:"rgb(255,255,255)"}}>
                     <ul >
                         <li>
                             Select a date to predict the temperature for that specific date.
@@ -75,21 +75,21 @@ export default function Prediction(props) {
 
             <div style={{ width: "100%", display: "flex", flexDirection: "row-reverse" }}>
                 <button style={{ display: "flex", flexDirection: "column", backgroundColor: "transparent", border: "0px solid transparent" }} onClick={() => { showHint("toast show"); }}>
-                    <img style={{ height: "22px", alignSelf: "center" }} src={question} />
+                    <img style={{ height: "calc(15px + 0.4vw + 0.4vh)", alignSelf: "center" }} src={question} />
                 </button>
             </div>
-            <div style={{ padding: "20px 0px 10px 20px", display: "flex", flexDirection: "column" }}>
+            <div style={{ padding: "calc(10px + 0.4vw + 0.4vh) calc(8px + 0.4vw + 0.4vh) calc(10px + 0.4vw + 0.4vh) calc(10px + 0.4vw + 0.4vh)", display: "flex", flexDirection: "column" }}>
                 <div>
                     <div className="pred-container">
-                        <img style={{ height: "30px", marginRight: "20px", alignSelf: "center" }} src={calendar} />
-                        <input id="datepicker" style={{ alignSelf: "center", marginLeft: "20px", backgroundColor: "rgb(28, 111, 236)", borderRadius: "5px", color: "white", colorScheme: "dark", border: "0px solid transparent", outline: "2px solid black" }} min={c_formatted_date} value={date} type={"date"} onChange={(e) => { setDate(e.target.value) }} />
+                        <img style={{ height: "calc(28px + 0.5vw + 0.5vh)", marginRight: "calc(15px + 0.5vw + 0.5vh)", alignSelf: "center" }} src={calendar} />
+                        <input id="datepicker" style={{ alignSelf: "center", fontSize:"calc(9px + 0.5vw + 0.5vh)", marginLeft: "calc(15px + 0.5vw + 0.5vh)", backgroundColor: "rgb(28, 111, 236)", borderRadius: "5px", color: "white", colorScheme: "dark", border: "0px solid transparent", outline: "2px solid black" }} min={c_formatted_date} value={date} type={"date"} onChange={(e) => { setDate(e.target.value) }} />
                     </div>
                 </div>
                 <div>
                     <div className="pred-container">
-                        <img style={{ height: "30px", marginRight: "20px", alignSelf: "center" }} src={globe} />
+                        <img style={{ height: "calc(28px + 0.5vw + 0.5vh)", marginRight: "calc(15px + 0.5vw + 0.5vh)", alignSelf: "center" }} src={globe} />
                         <div className="btn-group">
-                            <button type="button" className="btn btn-primary btn-sm dropdown-toggle" style={{border: "2px solid black"}} data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" className="btn btn-primary btn-sm dropdown-toggle" style={{border: "2px solid black", fontSize:"calc(7px + 0.5vw + 0.5vh)"}} data-bs-toggle="dropdown" aria-expanded="false">
                                 {location}
                             </button>
                             <ul className="dropdown-menu">
@@ -101,12 +101,12 @@ export default function Prediction(props) {
                 </div>
                 <div>
                     <div className="pred-container">
-                        <img style={{ height: "30px", marginRight: "20px", alignSelf: "center" }} src={temperature} />
-                        <input className="prediction-output" readOnly={"readonly"} value={temp + "\u2103"} />
+                        <img style={{ height: "calc(28px + 0.5vw + 0.5vh)", marginRight: "calc(14px + 0.5vw + 0.5vh)", alignSelf: "center" }} src={temperature} />
+                        <input className="prediction-output" style={{fontSize:"calc(9px + 0.5vw + 0.5vh)"}} readOnly={"readonly"} value={temp + "\u2103"} />
                     </div>
                 </div>
 
-                <button className="prediction" onClick={runMachineLearningModel}>
+                <button className="prediction" style={{fontSize:"calc(8px + 0.5vw + 0.5vh)"}}  onClick={runMachineLearningModel}>
                     Predict
                 </button>
             </div>

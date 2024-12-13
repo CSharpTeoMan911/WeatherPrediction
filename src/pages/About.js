@@ -6,7 +6,7 @@ export default function About() {
         <div>
             <Nav />
             <MainPanel>
-
+                
             </MainPanel>
         </div>
     );

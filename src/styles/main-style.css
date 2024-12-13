@@ -2,12 +2,13 @@
     background-image: url("../files/images/Analysis.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: fit-content;
     width: 100vw;
 }
 
 
 div.main-panel{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-content: center;
