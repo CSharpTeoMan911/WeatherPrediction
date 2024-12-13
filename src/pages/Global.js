@@ -8,7 +8,7 @@ export default function Global() {
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             <Nav />
             
-            <MainPanel>
+            <MainPanel id={"weather_prediction"}>
                 <WeatherPrediction/>
             </MainPanel>
         </div>

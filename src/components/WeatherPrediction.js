@@ -2,14 +2,13 @@ import "../styles/prediction-style.css"
 import { useState } from "react"
 import Prediction from "./Prediction"
 import LoadingPanel from "./LoadingPanel"
-import WorkerFactory from "./WorkerFactory"
-import PyodideWorker from "./PyodideWorker.worker"
+
 
 
 export default function WeatherPrediction() {
     const[loaded, setLoaded] = useState(false);
-    const[pyodideWorker, setPyodideWorker] = useState(new WorkerFactory(PyodideWorker));
-    
+    const[pyodideWorker, setPyodideWorker] = useState(new Worker(`${process.env.PUBLIC_URL}/PyodideWorker.js`));
+
     if(loaded === false){
         pyodideWorker.postMessage("Load Pyodide");
         pyodideWorker.onmessage = (e)=> {

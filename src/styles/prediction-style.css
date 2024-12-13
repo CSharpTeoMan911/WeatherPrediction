@@ -24,8 +24,8 @@ button.prediction{
     margin-top: 25px;
     border-radius: 5px;
     padding: 5px 10px 5px 10px;
-    border: 1px solid black;
-    background-color: #dc3545;
+    border: 2px solid black;
+    background-color: rgb(28, 111, 236);
     color: white;
 }
 

@@ -1,6 +1,6 @@
 export default function Nav(){
     return (
-        <div>
+        <div id="nav-bar">
           <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
               <a className="navbar-brand" href="/">WeatherData</a>
