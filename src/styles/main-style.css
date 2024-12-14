@@ -19,4 +19,5 @@ div.main-panel{
     height: fit-content;
     width: fit-content;
     padding: 10px;
+    box-shadow: 10px 30px 20px black ;
 }
