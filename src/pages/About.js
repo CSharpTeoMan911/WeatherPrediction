@@ -110,7 +110,7 @@ export default function About() {
                             72%
                         </span>
                         <span>
-                            . Click view the Jupyter Notebbok as a <a href={window.location.origin + "/pdf"}>PDF</a> or navigate to the <a href="https://github.com/CSharpTeoMan911/TemperatureDataAnalysis/blob/main/WeatherAnalysys.ipynb">Github</a> repository.
+                            . Click view the Jupyter Notebook as a <a href={window.location.origin + "/pdf"}>PDF</a> or navigate to the <a href="https://github.com/CSharpTeoMan911/TemperatureDataAnalysis/blob/main/WeatherAnalysys.ipynb">Github</a> repository.
                         </span>
                     </p>
 
