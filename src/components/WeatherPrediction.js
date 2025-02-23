@@ -2,6 +2,7 @@ import "../styles/prediction-style.css"
 import { useState } from "react"
 import Prediction from "./Prediction"
 import LoadingPanel from "./LoadingPanel"
+import {logo} from "./PyLogo"
 
 let worker_handle = null;
 
@@ -11,6 +12,8 @@ export default function WeatherPrediction() {
     worker_handle = pyodideWorker;
 
     if(loaded === false){
+        console.clear();
+        console.log(`\n\n${logo}`);
         pyodideWorker.postMessage("Load Pyodide");
         pyodideWorker.onmessage = (e)=> {
             if(e.data === "Pyodide loaded"){

@@ -64,8 +64,15 @@ export default function Prediction(props) {
         const day = _date.getDate();
         const month = _date.getMonth() + 1;
         const year = _date.getFullYear();
-        let model = location === "London"? JSON.stringify(london_model) : JSON.stringify(global_model);
+        let model = location === "London" ? JSON.stringify(london_model) : JSON.stringify(global_model);
+
+        console.log("\n\n\n///////////////////////////////////////////////////////////");
+        console.log(`// [!!!] Loading the ${location} machine learning model [!!!] //`);
+        console.log("///////////////////////////////////////////////////////////");
+
         console.log(model);
+
+
         const main = await (await fetch(machine_learning_interface)).text();
         pyodideWorker.postMessage([model, day.toString(), month.toString(), year.toString(), main]);
     }

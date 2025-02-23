@@ -3,12 +3,20 @@
 var self = this;
 self.addEventListener('message', async (event) => {
   if (event.data === "Load Pyodide" && self.pyodide == null) {
+    console.log("\n\n\n\n//////////////////////////////////////////")
+    console.log("//[!!!] Python PIP Modules Loading [!!!]//")
+    console.log("//////////////////////////////////////////\n\n")
+
     self.importScripts("https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js");
     self.pyodide = await loadPyodide();
     await self.pyodide.loadPackage("micropip");
     const micropip = self.pyodide.pyimport("micropip");
     await micropip.install('scikit-learn');
     self.postMessage("Pyodide loaded");
+
+    console.log("\n\n/////////////////////////////////////////")
+    console.log("//[!!!] Python PIP Modules Loaded [!!!]//")
+    console.log("/////////////////////////////////////////\n\n\n\n")
   }
   else if (event.data[0] !== null && self.pyodide !== null) {
     const day = event.data[1];
