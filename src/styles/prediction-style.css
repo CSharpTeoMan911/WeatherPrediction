@@ -1,3 +1,7 @@
+div.help-panel{
+    box-shadow: 15px 30px 30px black ;
+}
+
 div.pred-container{
     display: flex;
     width: fit-content;

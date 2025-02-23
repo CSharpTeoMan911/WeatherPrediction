@@ -10,7 +10,7 @@ self.addEventListener('message', async (event) => {
     await micropip.install('scikit-learn');
     self.postMessage("Pyodide loaded");
   }
-  else if ((event.data[0] == "Global" || event.data[0] == "London") && self.pyodide !== null) {
+  else if (event.data[0] !== null && self.pyodide !== null) {
     const day = event.data[1];
     const month = event.data[2];
     const year = event.data[3];
