@@ -21,7 +21,7 @@ You can access the app here: [WeatherPrediction App](https://weatherprediction-d
 
 ![Polynomial](https://github.com/user-attachments/assets/0f9ada58-61fa-4d6d-9fd4-8aae6475b996)
 
-For more details, check out the [Jupyter Notebook PDF](https://weatherprediction-d3c67.web.app/pdf) or the [GitHub Repository](https://github.com/CSharpTeoMan911/TemperatureDataAnalysis).
+For more details, check out the [Jupyter Notebook GitHub Repository](https://github.com/CSharpTeoMan911/TemperatureDataAnalysis).
 
 ## 🛠️ Tech Stack
 
