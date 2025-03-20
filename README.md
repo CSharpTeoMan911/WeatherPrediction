@@ -2,6 +2,8 @@
 
 ![WebSite-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/544839f4-9568-469c-af90-d0fcf82ae0d3)
 
+![Prediction-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/75e5ab3e-2f5f-413f-9c0c-4853717e8d2a)
+
 
 WeatherPrediction is a weather forecasting app powered by machine learning that predicts temperatures for Global and London locations. The app predicts the average temperature between the maximum and minimum values for a given day.
 
