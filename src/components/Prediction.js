@@ -102,7 +102,7 @@ export default function Prediction(props) {
                     <img style={{ height: "calc(15px + 0.4vw + 0.4vh)", alignSelf: "center" }} src={question} />
                 </button>
             </div>
-            <div style={{ padding: "calc(10px + 0.4vw + 0.4vh) calc(8px + 0.4vw + 0.4vh) calc(10px + 0.4vw + 0.4vh) calc(10px + 0.4vw + 0.4vh)", display: "flex", flexDirection: "column" }}>
+            <div style={{ padding: "calc(10px + 0.4vw + 0.4vh) calc(8px + 0.4vw + 0.4vh) calc(5px + 0.4vw + 0.4vh) calc(10px + 0.4vw + 0.4vh)", display: "flex", flexDirection: "column" }}>
                 <div>
                     <div className="pred-container">
                         <img style={{ height: "calc(28px + 0.4vw + 0.4vh)", marginRight: "calc(15px + 0.4vw + 0.4vh)", alignSelf: "center" }} src={calendar} />
@@ -113,7 +113,7 @@ export default function Prediction(props) {
                     <div className="pred-container">
                         <img style={{ height: "calc(28px + 0.4vw + 0.4vh)", marginRight: "calc(15px + 0.4vw + 0.4vh)", alignSelf: "center" }} src={globe} />
                         <div className="btn-group">
-                            <button type="button" className="btn btn-primary btn-sm dropdown-toggle" style={{ border: "2px solid black", fontSize: "calc(8px + 0.4vw + 0.4vh)" }} data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" className="btn btn-primary btn-sm dropdown-toggle" style={{ border: "2px solid black", marginLeft: "calc(14px + 0.4vw + 0.4vh)", fontSize: "calc(8px + 0.4vw + 0.4vh)" }} data-bs-toggle="dropdown" aria-expanded="false">
                                 {location}
                             </button>
                             <ul className="dropdown-menu">
@@ -141,7 +141,7 @@ export default function Prediction(props) {
                             data-testid="loader"
                             size={loaderSize}
                         />
-                        <input className="prediction-output" style={{ fontSize: "calc(9px + 0.4vw + 0.4vh)" }} readOnly={"readonly"} value={temp + "\u2103"} />
+                        <input className="prediction-output" style={{ fontSize: "calc(11px + 0.4vw + 0.4vh)", marginLeft: "calc(15px + 0.4vw + 0.4vh)" }} readOnly={"readonly"} value={temp + "\u2103"} />
                     </div>
                 </div>
 

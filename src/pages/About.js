@@ -213,7 +213,7 @@ export default function About() {
                             &nbsp;JsDelivr CDN
                         </span>
                         <span>
-                            &nbsp;(Content Delivery Network) within the web-worker and afterwards, and then loading the
+                            &nbsp;(Content Delivery Network) within the web-worker and then, loading the
                         </span>
                         <span style={{ fontWeight: "500" }}>
                             &nbsp;Micropip
