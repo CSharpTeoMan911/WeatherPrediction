@@ -106,14 +106,14 @@ export default function Prediction(props) {
                 <div>
                     <div className="pred-container">
                         <img style={{ height: "calc(28px + 0.4vw + 0.4vh)", marginRight: "calc(15px + 0.4vw + 0.4vh)", alignSelf: "center" }} src={calendar} />
-                        <input id="datepicker" style={{ alignSelf: "center", fontSize: "calc(10px + 0.4vw + 0.4vh)", marginLeft: "calc(15px + 0.4vw + 0.4vh)", backgroundColor: "rgb(28, 111, 236)", borderRadius: "5px", color: "white", colorScheme: "dark", border: "0px solid transparent", outline: "2px solid black" }} min={c_formatted_date} value={date} type={"date"} onChange={(e) => { setDate(e.target.value) }} />
+                        <input  id="datepicker" style={{ alignSelf: "center", fontSize: "calc(10px + 0.4vw + 0.4vh)", marginLeft: "calc(15px + 0.4vw + 0.4vh)", backgroundColor: "rgb(28, 111, 236)", borderRadius: "5px", color: "white", colorScheme: "dark", border: "0px solid transparent", boxShadow:"10px 10px 50px black" ,outline: "1px solid black" }} min={c_formatted_date} value={date} type={"date"} onChange={(e) => { setDate(e.target.value) }} />
                     </div>
                 </div>
                 <div>
                     <div className="pred-container">
                         <img style={{ height: "calc(28px + 0.4vw + 0.4vh)", marginRight: "calc(15px + 0.4vw + 0.4vh)", alignSelf: "center" }} src={globe} />
                         <div className="btn-group">
-                            <button type="button" className="btn btn-primary btn-sm dropdown-toggle" style={{ border: "2px solid black", marginLeft: "calc(14px + 0.4vw + 0.4vh)", fontSize: "calc(8px + 0.4vw + 0.4vh)" }} data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" className="btn btn-primary btn-sm dropdown-toggle" style={{ border: "1px solid black", marginLeft: "calc(14px + 0.4vw + 0.4vh)", fontSize: "calc(8px + 0.4vw + 0.4vh)", boxShadow:"10px 10px 50px black" }} data-bs-toggle="dropdown" aria-expanded="false">
                                 {location}
                             </button>
                             <ul className="dropdown-menu">

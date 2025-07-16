@@ -17,18 +17,18 @@ export default function WeatherPrediction() {
       setPyodideWorker(
         new Worker(`${process.env.PUBLIC_URL}/PyodideWorker.js`)
       );
-      setLoaded(true);
+      setPyodideLoaded(true);
     }
   }, [loaded]);
 
-  if (loaded === true) {
-    if (pyodideLoaded === false) {
+  if (pyodideLoaded === true) {
+    if (loaded === false) {
       console.clear();
       console.log(`\n\n${logo}`);
       pyodideWorker.postMessage("Load Pyodide");
       pyodideWorker.onmessage = (e) => {
         if (e.data === "Pyodide loaded") {
-          setPyodideLoaded(true);
+          setLoaded(true);
         }
       };
     }

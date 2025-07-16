@@ -12,12 +12,12 @@ div.main-panel{
     display: flex;
     flex-direction: column;
     align-content: center;
-    background-color: rgba(255, 255, 255, 0.8);
+    background: linear-gradient(to left, rgba(221, 219, 219, 0.7) 30%, rgba(255, 254, 254, 0.7) 50%);
     border-radius: 10px;
     align-self: center;
     justify-self: center;
     height: fit-content;
     width: fit-content;
     padding: 10px;
-    box-shadow: 10px 30px 20px black ;
+    box-shadow: 10px 30px 40px black ;
 }
